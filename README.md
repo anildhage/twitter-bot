@@ -1,7 +1,7 @@
 # twitter-bot
 A bot that will Like, Retweet, Follow and Tweet a post, 24/7.I created this twitter bot to help a community to share their message to important twitter handles and hashtags. You may wish to use this program as per your goals. 
 
-##Source
+## Source
 [RealPython](https://realpython.com/twitter-bot-python-tweepy/). Using this blog, I added more actions that a bot can perform.
 
 ## Advantages
