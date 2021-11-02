@@ -1,5 +1,5 @@
 # twitter-bot
-A bot that will Like, Retweet, Follow and Tweet a post, 24/7.I created this twitter bot to help a community to share their message to important twitter handles and hashtags. You may wish to use this program as per your goals. Check out my [article](https://iamdhage.medium.com/run-this-twitter-bot-for-your-next-social-cause-like-retweet-follow-a-user-tweet-your-content-18e01ae5a0d) about this project.
+A bot that will Like, Retweet, Follow and Tweet a post, 24/7.I created this twitter bot to help a community to share their message to important twitter handles and hashtags. You may wish to use this program as per your goals. Check out my [article](https://iamdhage.medium.com/run-this-twitter-bot-for-your-next-social-cause-like-retweet-follow-a-user-tweet-your-content-18e01ae5a0d?source=friends_link&sk=6906f1666989ac1d702cfb1ab95ae7e9) about this project.
 
 ## Source
 [RealPython](https://realpython.com/twitter-bot-python-tweepy/). Using this blog, I added more actions that a bot can perform.
