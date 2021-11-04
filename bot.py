@@ -33,7 +33,7 @@ class twitter_bot(tweepy.StreamListener):
         #------->Like<----------
         global like_rate
         if not like_rate >= 1000:
-            #2 account types are ignored: 1. if an account is reply to some other user & self accounts
+            #Tweets created by you are ignored and if already liked by you are also ignored
             if not (tweet.user.id == self.me.id or tweet.favorited):
                 # if not tweet.favorited:
                     try:
@@ -50,7 +50,7 @@ class twitter_bot(tweepy.StreamListener):
 
         #------->Retweet<----------
         global retweet_rate
-        #2 account types are ignored: 1. if an account is reply to some other user & self accounts
+        #Tweets created by you are ignored and if already retweeted by you are also ignored
         if not (tweet.user.id == self.me.id or tweet.retweeted):
             # if not tweet.retweeted:
                 try:
@@ -68,7 +68,7 @@ class twitter_bot(tweepy.StreamListener):
         global follow_interval
         #follow every 5th user
         if follow_interval % 5 == 0:
-            #2 account types are ignored: 1. if an account is reply to some other user & self accounts
+            #avoding following your own account.
             if not tweet.user.id == self.me.id:
                 if self.api._lookup_friendships(self.me.id, tweet.user.id):
                         #follow user if you dont already follow
@@ -93,8 +93,8 @@ class twitter_bot(tweepy.StreamListener):
             if not tweet.user.id == self.me.id:
             #Grab a streaming tweet, add tags in (mentions). Maximum Char while tweeting is 280. 
                 try:
-                    if not len(tweet.text) <= 162:
-                        limit_char = tweet.text[:159]
+                    if not len(tweet.text) <= 280:
+                        limit_char = tweet.text[:279]
                         new_char = limit_char+' '+mentions
                         # Create a tweet
                         self.api.update_status(new_char)
@@ -104,7 +104,7 @@ class twitter_bot(tweepy.StreamListener):
                         next_tweet = tweet_interval+10
                         logger.info('Next tweet at %sth like/retweet', next_tweet)
                     else:
-                        limit_char = tweet.text[:159]
+                        limit_char = tweet.text[:279]
                         new_char = limit_char+' '+mentions
                         # Create a tweet
                         self.api.update_status(new_char)
